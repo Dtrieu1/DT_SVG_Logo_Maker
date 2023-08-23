@@ -1,6 +1,37 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 
+class Shape {
+  constructor(shapeName) {
+    this.shapeName = shapeName;
+  }
+
+  render() {}
+}
+
+class Circle extends Shape {
+  constructor(shapeName) {
+    super(shapeName);
+  }
+
+  render() {}
+}
+
+class Square extends Shape {
+  constructor(shapeName) {
+    super(shapeName);
+  }
+
+  render() {}
+}
+
+class Triangle extends Shape {
+  constructor(shapeName) {
+    super(shapeName);
+  }
+  render() {}
+}
+
 const questions = [
   {
     type: "input",
