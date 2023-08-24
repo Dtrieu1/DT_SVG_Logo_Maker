@@ -1,36 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-
-class Shape {
-  constructor(shapeName) {
-    this.shapeName = shapeName;
-  }
-
-  render() {}
-}
-
-class Circle extends Shape {
-  constructor(shapeName) {
-    super(shapeName);
-  }
-
-  render() {}
-}
-
-class Square extends Shape {
-  constructor(shapeName) {
-    super(shapeName);
-  }
-
-  render() {}
-}
-
-class Triangle extends Shape {
-  constructor(shapeName) {
-    super(shapeName);
-  }
-  render() {}
-}
+const shapes = require("./shapes.js");
 
 const questions = [
   {
@@ -66,20 +36,29 @@ const questions = [
     name: "ShapeColor",
     default: "Not Provided",
   },
-  {
-    type: "input",
-    name: "Github_account",
-    message: "What is your Github account?",
-    default: "Not Provided",
-  },
 ];
+
+//why does writetofile need a function
+
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, (err) =>
+    err ? console.error(err) : console.log(`${fileName} created!`)
+  );
+}
 
 function init() {
   inquirer.prompt(questions).then((answers) => {
-    console.log(answers);
+    console.log(answers.Shape);
+    writeToFile(
+      "demo1.svg",
+      shapes.shapeCheck(
+        answers.Shape,
+        answers.ShapeColor,
+        answers.Characters,
+        answers.TextColor
+      )
+    );
   });
 }
 
 init();
-
-// Want us to use inheritance with classes for SHape --> Triagne, Circle, and Square
