@@ -20,7 +20,7 @@ You can test the application by opening up the project: DT_SVG_Logo_maker and en
 
 ## Demo
 
-[Video Demo](https://drive.google.com/file/d/1fAd8YbDCJXy7mRhsY9RB9cu6IpKPalK-/view?usp=drive_link)
+[Video Demo](https://drive.google.com/file/d/1PafSm3PGpDPBWLjL2qzAaW4BV3EckPQx/view?usp=sharing)
 
 ## Resources
 
