@@ -23,7 +23,9 @@ class Circle extends Shape {
   </svg>
   <text x="200" y="155" font-size="60" text-anchor="middle" fill="${this.textColor}">${this.textName}</text>
   </svg>`;
-  render() {}
+  render() {
+    returns`<circle cx="200" cy="130" r="80" style="fill:${this.shapeColor};stroke:purple;stroke-width:1" />`;
+  }
 }
 
 class Square extends Shape {
@@ -38,6 +40,9 @@ class Square extends Shape {
   </svg>
   <text x="200" y="155" font-size="60" text-anchor="middle" fill="${this.textColor}">${this.textName}</text>
   </svg>`;
+  render() {
+    returns`<rect x="100" y="50" width="200" height="150" style="fill:${this.shapeColor};stroke:purple;stroke-width:1" />`;
+  }
 }
 
 class Triangle extends Shape {
@@ -52,7 +57,9 @@ class Triangle extends Shape {
   </svg>
   <text x="200" y="155" font-size="60" text-anchor="middle" fill="${this.textColor}">${this.textName}</text>
   </svg>`;
-  render() {}
+  render() {
+    returns`<polygon points="200,10 300,190 100,190" style="fill:${this.shapeColor};stroke:purple;stroke-width:1" />`;
+  }
 }
 
 function shapeCheck(shapeName, shapeColor, textName, textColor) {
@@ -65,6 +72,15 @@ function shapeCheck(shapeName, shapeColor, textName, textColor) {
       const square1 = new Square(shapeName, shapeColor, textName, textColor);
       console.log(square1);
       return square1.SVG;
+    case "Triangle":
+      const triangle1 = new Triangle(
+        shapeName,
+        shapeColor,
+        textName,
+        textColor
+      );
+      console.log(triangle1);
+      return triangle1.SVG;
   }
 }
 
